@@ -1,0 +1,403 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base layout */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Select dropdown styling */
+select {
+  background-color: #212529;
+  color: #ffc107;
+  border: 1px solid #ffc107;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  
+}
+
+select:hover {
+  background-color: #2a2f34;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0 0 6px #ffc107;
+}
+
+/* Year + language selectors alignment */
+.year-selector,
+.language-selector {
+  display: flex;
+  align-items: center;
+}
+
+/* Brand hover glow */
+.navbar-brand {
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.4);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.9);
+  transform: scale(1.02);
+}
+
+/* =====================================================
+   MOBILE OPTIMIZATION
+===================================================== */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px; /* spacing between rows */
+    padding: 8px 0;
+  }
+
+  .year-selector,
+  .language-selector {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Slight highlight for brand to separate visually */
+  .navbar-brand {
+    border-top: 1px solid rgba(255, 193, 7, 0.3);
+    border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+    padding: 6px 0;
+    width: 100%;
+  }
+
+  select {
+    min-width: 140px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .navbar .container {
+    gap: 8px;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+  background: linear-gradient(45deg, rgba(255, 49, 49, 0.5), rgba(255, 214, 10, 0.5)), url("../images/banner.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 58px !important; /* replaces mt-5 */
+}
+
+/* Hero Responsive */
+
+/* iPad Pro (portrait & landscape) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    height: 50vh; /* Adjust height for iPad Pro */
+  }
+}
+
+/* ipad mini */
+@media (max-width: 768px) {
+  .hero {
+    height: 43vh;
+    margin-top: 140px !important; /* replaces mt-5 */
+  }
+}
+
+/* galaxy ultra 5G */
+@media (max-width: 480px) {
+  .hero {
+    height: 33vh;
+    margin-top: 140px !important; /* replaces mt-5 */
+  }
+}
+
+
+
+
+.hero h1 {
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  text-shadow: 0 0 10px rgba(255, 214, 10, 0.8);
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: bold;
+  color: #222;
+}
+
+/* Countdown Timer */
+#countdown {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: bold;
+  background: #ffcc00;
+  color: #c1121f;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+#countdown:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* =====================================================
+   ORGANIZER / WINNER / INTRODUCTION / GALLERY / VIDEO TITLES
+===================================================== */
+#organizer h2,
+#winner h2,
+#introduction h2,
+#gallery h2,
+#video h2 {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#winner a{
+  text-decoration: none;
+}
+
+/* =====================================================
+   NEWS SECTION
+===================================================== */
+#news {
+  background: #f8f9fa;
+  padding: 60px 0;
+}
+
+#news h2 {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.news-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.news-item {
+  background: #fff;
+  padding: 20px;
+  border-left: 6px solid #dc3545;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.news-item a {
+  color: #212529;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
+
+/* News Responsive Grid */
+@media (min-width: 768px) {
+  .news-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =====================================================
+   VENUE SECTION
+===================================================== */
+#venue {
+  padding: 60px 0;
+}
+
+#venue h2 {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.venue {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.venue img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.venue iframe {
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.venue p {
+  margin-top: 10px;
+  color: #555;
+}
+
+.venue a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #dc3545;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #dc3545;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.venue a:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Venue Responsive Layout */
+@media (min-width: 768px) {
+  .venue {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .venue iframe {
+    max-width: 100%;
+    height: 320px;
+  }
+}
+
+/* =====================================================
+   FIXED BOTTOM VIDEO
+===================================================== */
+.video-bottom-left {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+@media (max-width: 576px) {
+  .video-bottom-left {
+    display: none;
+  }
+}
+
+/* =====================================================
+   LIVE VIDEO SECTION
+===================================================== */
+#live-video-1,
+#live-video-2 {
+  background: #f8f9fa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#live-video-1 h2,
+#live-video-2 h2 {
+  color: #dc3545;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.video-wrapper:hover {
+  transform: scale(1.01);
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Live Video Responsive */
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 95%;
+  }
+
+  #live-video-1,
+  #live-video-2 {
+    padding: 20px 0;
+  }
+
+  .video-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
