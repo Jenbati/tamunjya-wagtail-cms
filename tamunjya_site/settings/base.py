@@ -20,7 +20,9 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-YOUTUBE_API_KEY = "AIzaSyBdw7ZzkzRzvy05zg8iHcTmR_cX0Qe4jp4"
+from decouple import config
+
+YOUTUBE_API_KEY = config("YOUTUBE_API_KEY")
 
 # Application definition
 
