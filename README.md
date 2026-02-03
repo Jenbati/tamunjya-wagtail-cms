@@ -53,8 +53,8 @@ This project demonstrates real-world usage of **Django + Wagtail** for building 
 ---
 
 ## Setup Instructions
-- git clone https://github.com/Jenbati/Tamunjya-Wagtail.git
-- cd Tamunjya-Wagtail
+- git clone https://github.com/Jenbati/tamunjya-wagtail-cms.git
+- cd tamunjya-wagtail-cms
 - python -m venv venv
 - source venv/bin/activate  # Windows: venv\Scripts\activate
 - pip install -r requirements.txt
