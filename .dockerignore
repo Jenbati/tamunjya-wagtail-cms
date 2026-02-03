@@ -22,6 +22,7 @@ coverage
 # Distribution / packaging
 .Python
 env/
+.env/
 build/
 develop-eggs/
 dist/
@@ -37,4 +38,4 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-.env
+
